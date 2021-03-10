@@ -5,19 +5,21 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
+import org.springframework.data.mongodb.core.MongoOperations;
+import org.springframework.data.mongodb.core.MongoTemplate;
 
-import com.arangodb.model.CollectionCreateOptions;
-import com.arangodb.springframework.core.ArangoOperations;
+import br.com.danielteles.chatproject.models.Room;
+import com.mongodb.client.*;
 
 @Configuration
 @Order(value = Ordered.LOWEST_PRECEDENCE)
-public class ArangoDBCollectionsConfig {
+public class MongoDBCollectionsConfig {
 	
 	@Autowired
-	private ArangoOperations template;
+	private MongoTemplate operations;
 	
 	@Bean
 	public void configureDatabase() {
-		template.collection("rooms", new CollectionCreateOptions().waitForSync(false));
+		operations.createCollection("rooms");
 	}
 }

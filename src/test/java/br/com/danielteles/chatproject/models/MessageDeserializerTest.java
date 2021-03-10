@@ -1,30 +1,26 @@
 package br.com.danielteles.chatproject.models;
 
-import static org.junit.Assert.assertNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.time.ZonedDateTime;
 
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @SpringBootTest
-@RunWith(SpringRunner.class)
 public class MessageDeserializerTest {
 
 	@Autowired
 	private ObjectMapper mapper;
 	
 	/** 
-	 * @author Daniel Teles
 	 * Teste para criação de objetos do tipo MessageRoom apartir de um JSON utilizando um deserializer, o MessageDeserializer
 	 * @throws JsonProcessingException 
 	 * @throws JsonMappingException 
@@ -48,7 +44,6 @@ public class MessageDeserializerTest {
 	}
 	
 	/** 
-	 * @author Daniel Teles
 	 * Teste para criação de objetos do tipo MessageRoom apartir de um JSON utilizando um deserializer, o MessageDeserializer, 
 	 * com atributos Nulos
 	 * @throws JsonProcessingException 

@@ -1,8 +1,8 @@
 package br.com.danielteles.chatproject.models;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-import com.arangodb.springframework.annotation.Document;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Builder;
