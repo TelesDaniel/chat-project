@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Chat Project!</title>
+	<script th:src="@{/scripts/request.js}"></script>
+	<script th:src="@{/scripts/messageManager.js}"></script>
+	<script th:src="@{/scripts/roomsManager.js}"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@stomp/stompjs@5.0.0/bundles/stomp.umd.min.js"></script>
+</head>
+<body>
+	<table id="rooms-table">
+	</table>
+
+	<div id="conversationDiv">
+		<table id="messages-table">
+			<!-- <tr>
+				<p>Daniel: Mensagem Bla Bla Bla (10:20)</p>
+			</tr> -->
+		</table>
+		<input type="text" id="text" placeholder="Escreva uma mensagem..."/>
+		<button id="sendMessage" onclick="sendMessage();">Send</button>
+	</div>
+</body>
+</html>
