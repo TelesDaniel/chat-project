@@ -1,6 +1,7 @@
  spring.jackson.serialization.write_dates_as_timestamps: false
- ARANGO_DATABASE: '_system'
- ARANGO_HOST: 'localhost'
- ARANGO_PORT: '8529'
- ARANGO_USER: '_root'
- ARANGO_PASSWORD: ''
+ MONGO_DATABASE: 'admin'
+ MONGO_HOST: 'localhost'
+ MONGO_PORT: '27017'
+ MONGO_AUTH: 'YES'
+ MONGO_USER: 'admin'
+ MONGO_PASSWORD: 'Password123'

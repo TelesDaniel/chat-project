@@ -1,5 +1,7 @@
 package br.com.danielteles.chatproject.models;
 
+import java.math.BigInteger;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -18,7 +20,7 @@ import lombok.Data;
 public class Room {
 	
 	@Id
-	private String id;
+	private BigInteger id;
 	
 	private String name;
 	
