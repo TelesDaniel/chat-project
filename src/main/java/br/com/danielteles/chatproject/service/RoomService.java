@@ -1,8 +1,11 @@
 package br.com.danielteles.chatproject.service;
 
 import java.math.BigInteger;
+import java.util.List;
 import java.util.Optional;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -25,7 +28,7 @@ public class RoomService {
 		this.repository = repository;
 	}
 
-	public ResponseEntity<Room> create(Room room) {
+	public ResponseEntity<Room> save(Room room) {
 		Room persisted = repository.save(room);
 		return new ResponseEntity<Room>(persisted, HttpStatus.CREATED);
 	}
@@ -35,5 +38,15 @@ public class RoomService {
 		if(!optional.isPresent())
 			throw new NotFoundException();
 		return new ResponseEntity<Room>(optional.get(), HttpStatus.CREATED);
+	}
+
+	public ResponseEntity<List<Room>> find(int page, int size) {
+		Page<Room> rooms = repository.findAll(PageRequest.of(page, size));
+		return new ResponseEntity<List<Room>>(rooms.toList(), HttpStatus.CREATED);
+	}
+
+	public ResponseEntity<String> delete(BigInteger id) {
+		repository.deleteById(id);
+		return new ResponseEntity<String>(HttpStatus.OK);
 	}
 }

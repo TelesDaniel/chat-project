@@ -4,18 +4,16 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.springframework.core.env.Environment;
 import org.springframework.data.mongodb.config.AbstractMongoClientConfiguration;
-import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 import com.mongodb.MongoClientSettings.Builder;
 import com.mongodb.MongoCredential;
 import com.mongodb.ServerAddress;
 
-import br.com.danielteles.chatproject.repository.RoomRepository;
-
 @Configuration
-@EnableMongoRepositories(basePackageClasses = {RoomRepository.class})
+@Profile(value = "!test" )
 public class MongoDBConnectionConfig extends AbstractMongoClientConfiguration {
 	
 	@Autowired

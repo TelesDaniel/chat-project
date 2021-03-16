@@ -1,7 +1,2 @@
  spring.jackson.serialization.write_dates_as_timestamps: false
- MONGO_DATABASE: 'admin'
- MONGO_HOST: 'localhost'
- MONGO_PORT: '27017'
- MONGO_AUTH: 'YES'
- MONGO_USER: 'admin'
- MONGO_PASSWORD: 'Password123'
+ spring.profiles.active: 'test'

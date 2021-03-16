@@ -6,6 +6,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.mongodb.lang.NonNull;
 
 import lombok.Builder;
 import lombok.Data;
@@ -22,6 +23,7 @@ public class Room {
 	@Id
 	private BigInteger id;
 	
+	@NonNull
 	private String name;
 	
 	@JsonIgnore
@@ -30,6 +32,7 @@ public class Room {
 	@JsonIgnore
 	private String owner;
 	
+	@NonNull
 	private RoomCapacity capacity;
 	
 	public static enum RoomType {
